@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="wrapper">
+  <header>
+      <div class="logo">
+        <img src="assets/logo.svg">
+        <img src="assets/smile.svg" class="smile">
+      </div>
+      <div class="about">
+        <p>Completely uninformed and casual hot-takes from a designer’s perspective on new crypto companies and upcoming ICO’s. This is very non-technical and definitely isn’t investment advice.</p>
+        <a href="http://twitter.com/alwysnvr" target="_blank">Follow on Twitter</a>  /  <a href="https://www.coinbase.com/join/56e529b2ecdcdf39d7000071" target="_blank">Buy Bitcoin</a>
+      </div>
+  </header>
+
+
+
+      {% for post in site.posts %}
+        <div class="article">
+          {{ if post.image }}
+            <img src="{{ post.image }}">
+          {{ end }}
+          <h2>
+            <a href="{{ post.token_website }}" target="_blank">{{ post.title | escape }}</a>
+          </h2>
+          <small>{{ post.date | date: '%B %d, %Y' }}</small>
+            {{ post.content }}
+          <div class="meta">
+            <a href="{{ post.token_website }}" target="_blank">${{ post.token }}</a>
+          </div>
+        </div>
+      {% endfor %}
+</div>
+
+<footer>
+  <img src="assets/footer_logo.svg">
+  <p>I built this dumb website in 2 hours with Jekyll, GitHub Pages and a $12 domain from Namecheap.</p>
+  <a href="http://twitter.com/alwysnvr">Follow on Twitter</a>
+</footer>
